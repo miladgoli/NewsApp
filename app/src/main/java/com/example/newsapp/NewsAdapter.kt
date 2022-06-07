@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import retrofit2.Response
 
-class NewsAdapter(var list: List<Article?>?): RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
+class NewsAdapter(var list: List<Article?>? ,var onclick: onClickNews): RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
 
     inner class NewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -18,21 +18,24 @@ class NewsAdapter(var list: List<Article?>?): RecyclerView.Adapter<NewsAdapter.N
         val author:TextView=itemView.findViewById(R.id.textViewAuthor)
         val date:TextView=itemView.findViewById(R.id.textViewDate)
 
-        fun bindItem(list: Article){
+        fun bindItem(article: Article){
 
-            title.text=list.title
+            title.text=article.title
 
-            if (list.author==null){
+            if (article.author==null){
                 author.text="Unknown...!"
             }else{
-                author.text=list.author
+                author.text=article.author
             }
 
-            date.text=list.publishedAt
+            date.text=article.publishedAt
 
-            Picasso.with(itemView.context).load(list.urlToImage).error(R.drawable.news)
+            Picasso.with(itemView.context).load(article.urlToImage).error(R.drawable.news)
                 .placeholder(R.drawable.news).centerCrop().fit().into(image)
 
+            itemView.setOnClickListener {
+                onclick.onClicked(article)
+            }
         }
     }
 
@@ -46,5 +49,9 @@ class NewsAdapter(var list: List<Article?>?): RecyclerView.Adapter<NewsAdapter.N
 
     override fun getItemCount(): Int {
         return list!!.size
+    }
+
+    interface onClickNews{
+        fun onClicked(article: Article)
     }
 }

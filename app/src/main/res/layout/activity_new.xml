@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_blue">
+
+    <RelativeLayout
+        android:id="@+id/imageZone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:cardElevation="16dp"
+            app:cardUseCompatPadding="true">
+
+            <ImageView
+                android:id="@+id/imageviewNew"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/news" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/imageZone"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtTitleNew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:fontFamily="@font/primary_bold"
+                android:textColor="@color/dark_blue"
+                android:textSize="18sp"
+                tools:text="Street fighting, constant shellling as Russia pushes for control of Ukraine's Donbas - Reuters.com" />
+
+            <TextView
+                android:id="@+id/txtDescriptionNew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:fontFamily="@font/primary_bold"
+                android:textColor="@color/dark_blue"
+                android:textSize="14sp"
+                tools:text="Ukrainian troops were engaged in fierce street fighting with Russian soldiers in the industrial city of Sievierodonetsk, while other towns were under constant shelling, as the Kremlin pushed for control of the eastern Donbas region." />
+
+
+            <TextView
+                android:id="@+id/txtContentNew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="8dp"
+                android:fontFamily="@font/primary_regular"
+                android:textColor="@color/m_black"
+                android:textSize="16sp"
+                tools:text="Ukrainian troops were engaged in fierce street fighting with Russian soldiers in the industrial city of Sievierodonetsk, while other towns were under constant shelling, as the Kremlin pushed for control of the eastern Donbas region." />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:fontFamily="@font/primary_regular"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="16sp"
+                    android:text="author ->" />
+
+                <TextView
+                    android:id="@+id/txtAuthorNew"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:lines="1"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/primary_regular"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="16sp"
+                    tools:text="Milad Goli" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:fontFamily="@font/primary_regular"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="16sp"
+                    android:text="source ->" />
+
+                <TextView
+                    android:id="@+id/txtSourceNew"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/primary_regular"
+                    android:lines="1"
+                    android:textColor="@color/sky_blue"
+                    android:textSize="16sp"
+                    tools:text="https://www.cnn.com/2022/06/06/uk/boris-johnson-vote-of-confidence-uk-prime-minister-intl/index.html" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>

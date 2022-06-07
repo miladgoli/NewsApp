@@ -1,5 +1,6 @@
 package com.example.newsapp
 
+import android.content.Intent
 import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -58,11 +59,11 @@ class MainActivity : AppCompatActivity() {
 
         val newsRetrofit: NewsApiRetrofit = retrofit.create(NewsApiRetrofit::class.java)
 
-        newsRetrofit.getNews().enqueue(object : Callback<New> {
+        newsRetrofit.getNews().enqueue(object : Callback<New>, NewsAdapter.onClickNews {
 
             override fun onResponse(call: Call<New>, response: Response<New>) {
 
-                adapter = NewsAdapter(response.body()?.articles)
+                adapter = NewsAdapter(response.body()?.articles,this)
 
                 binding.recViewMain.layoutManager =
                     LinearLayoutManager(this@MainActivity, RecyclerView.VERTICAL, false)
@@ -79,6 +80,12 @@ class MainActivity : AppCompatActivity() {
                 Log.i(TAG, "Error" + t.message.toString())
                 binding.progressLoad.visibility=View.GONE
                 binding.textViewErrorLoad.visibility=View.VISIBLE
+            }
+
+            override fun onClicked(article: Article) {
+                val intent=Intent(this@MainActivity,NewActivity::class.java)
+                intent.putExtra("article",article)
+                startActivity(intent)
             }
 
         })
