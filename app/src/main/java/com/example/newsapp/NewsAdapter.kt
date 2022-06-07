@@ -20,7 +20,7 @@ class NewsAdapter(var list: List<Article?>?): RecyclerView.Adapter<NewsAdapter.N
 
         fun bindItem(list: Article){
 
-
+            title.text=list.title
 
             if (list.author==null){
                 author.text="Unknown...!"
