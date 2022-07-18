@@ -21,8 +21,8 @@ this is the whole concept that **News App** has:))
 
 ## Demo
 
-<img src="https://user-images.githubusercontent.com/75157969/179423079-1aa7c758-421e-43e0-b843-3c58887513ce.jpg" alt="TSP_screen_shot" width="200"/>  
-<img src="https://user-images.githubusercontent.com/75157969/179423124-f02e7f91-bab8-43c0-bb80-b8b2b582785c.jpg" alt="TSP_screen_shot" width="200"/> 
+<img src="https://user-images.githubusercontent.com/75157969/179423079-1aa7c758-421e-43e0-b843-3c58887513ce.jpg" alt="NewsApp_screen_shot" width="200"/>  
+<img src="https://user-images.githubusercontent.com/75157969/179423124-f02e7f91-bab8-43c0-bb80-b8b2b582785c.jpg" alt="NewsApp_screen_shot" width="200"/> 
 
 
 
