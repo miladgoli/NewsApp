@@ -12,7 +12,6 @@ This Project use:
 - Retrofit.
 - Kotlin Coroutines.
 - KTX Library
-- Live Data
 
 ## How to use?
 
